@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
 
 dependencies {
     implementation gradleApi()
@@ -6,4 +7,15 @@ dependencies {
     implementation 'com.android.tools.build:gradle:2.2.0'
     implementation 'org.aspectj:aspectjtools:1.8.9'
     implementation 'org.aspectj:aspectjrt:1.8.9'
+}
+
+group='com.deity.poetry.plugin'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
 }

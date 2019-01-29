@@ -2,7 +2,7 @@
  * Bintray release configuration
  * */
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'poetry'
     bintrayName = POM_BINTRAY_NAME
 
     publishedGroupId = 'com.deity.poetry'
@@ -21,9 +21,9 @@ ext {
     developerName = 'MeDeity'
     developerEmail = 'langrenbule@gmail.com'
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["The Apache Software License, Version 2.0"]
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
 }
 
 // Set up the Android Maven publication.
