@@ -1,0 +1,33 @@
+/**
+ * Bintray release configuration
+ * */
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = POM_BINTRAY_NAME
+
+    publishedGroupId = 'com.deity.poetry'
+    libraryName = 'Poetry'
+    artifact = POM_ARTIFACT_ID
+    packagingType = POM_PACKAGING
+
+    libraryDescription = POM_DESCRIPTION
+
+    siteUrl = 'https://github.com/MeDeity/Poetry'
+    gitUrl = 'https://github.com/MeDeity/Poetry.git'
+
+    libraryVersion = POM_VERSION
+
+    developerId = 'MeDeity'
+    developerName = 'MeDeity'
+    developerEmail = 'langrenbule@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["The Apache Software License, Version 2.0"]
+}
+
+// Set up the Android Maven publication.
+//apply from: rootProject.file('jcenter/maven-install.gradle') //会报compile 错误
+
+// Publish on Bintray.
+apply from: rootProject.file('jcenter/bintray.gradle')
