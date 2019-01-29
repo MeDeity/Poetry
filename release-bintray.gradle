@@ -27,7 +27,7 @@ ext {
 }
 
 // Set up the Android Maven publication.
-//apply from: rootProject.file('jcenter/maven-install.gradle') //会报compile 错误
+apply from: rootProject.file('jcenter/maven-install.gradle')
 
 // Publish on Bintray.
 apply from: rootProject.file('jcenter/bintray.gradle')
