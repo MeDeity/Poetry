@@ -16,6 +16,9 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: uri('../repo'))
+            pom.groupId = 'com.deity.poetry.plugin'  //groupId ，自行定义，一般是包名
+            pom.artifactId = 'poetry-plugin' //artifactId ，自行定义
+            pom.version = '1.0.0' //version 版本号
         }
     }
 }

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'poetry-plugin'
+apply plugin: 'poetry'
 
 android {
     compileSdkVersion 28

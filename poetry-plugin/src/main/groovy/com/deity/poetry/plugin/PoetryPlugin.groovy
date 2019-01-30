@@ -30,8 +30,8 @@ class PoetryPlugin implements Plugin<Project> {
         project.dependencies {
             // TODO this should come transitively
             testImplementation 'org.aspectj:aspectjrt:1.8.9'
-            implementation project(':poetry-annotations')
-            testImplementation project(':poetry-runtime')
+            implementation 'com.deity.poetry:annotations:1.0.00'
+            testImplementation 'com.deity.poetry:runtime:1.0.00'
         }
 
         JavaCompile javaCompile = variant.javaCompile
