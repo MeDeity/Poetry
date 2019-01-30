@@ -1,5 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: "com.gradle.plugin-publish"
+apply plugin: "java-gradle-plugin"
 
 dependencies {
     implementation gradleApi()
@@ -12,13 +14,49 @@ dependencies {
 group='com.deity.poetry.plugin'
 version='1.0.0'
 
-uploadArchives {
+// Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
+//gradlePlugin {
+//    plugins {
+//        greetingsPlugin {
+//            id = 'com.deity.poetry'
+//            implementationClass = 'com.deity.poetry.plugin.PoetryPlugin'
+//        }
+//    }
+//}
+
+repositories {
+    jcenter()
+}
+
+buildscript {
     repositories {
-        mavenDeployer {
-            repository(url: uri('../repo'))
-            pom.groupId = 'com.deity.poetry.plugin'  //groupId ，自行定义，一般是包名
-            pom.artifactId = 'poetry-plugin' //artifactId ，自行定义
-            pom.version = '1.0.0' //version 版本号
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+// The configuration example below shows the minimum required properties
+// configured to publish your plugin to the plugin portal
+pluginBundle {
+    website = 'https://github.com/MeDeity/Poetry'
+    vcsUrl = 'https://github.com/MeDeity/Poetry.git'
+    description = 'aop log for android'
+    tags = ['aop','log','android']
+
+    plugins {
+        poetryPlugin {
+            // id is captured from java-gradle-plugin configuration
+            id = 'com.deity.poetry'
+            displayName = 'aop log for android'
         }
     }
 }
