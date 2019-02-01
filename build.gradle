@@ -26,11 +26,11 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
+        jcenter()
         maven {
             url uri('repo')
         }
-        google()
-        jcenter()
     }
 }
 

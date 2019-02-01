@@ -1,16 +1,7 @@
-//不加这个找不到自定义插件???
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        // classpath 'org.aspectj:aspectjtools:1.8.1'
-    }
-}
 
 apply plugin: 'com.android.application'
 //apply plugin: 'poetry'
-apply plugin: 'com.deity'
+apply plugin: 'com.deity.buildsrc'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -37,5 +28,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':poetry-annotations')
+    implementation project(':poetry-runtime')
+//    implementation 'com.deity.poetry:annotations:1.0.00'
+//    implementation 'com.deity.poetry:runtime:1.0.00'
+//    implementation 'com.deity.common:common:1.0.00'
 }
 
