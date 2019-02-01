@@ -1,1 +1,1 @@
-include ':app', ':poetry-annotations', ':poetry-runtime', ':poetry-plugin'
+include ':app', ':poetry-annotations', ':poetry-runtime', ':poetry-plugin', ':buildSrc'
