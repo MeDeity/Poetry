@@ -29,7 +29,9 @@ android {
 dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'org.aspectj:aspectjrt:1.8.9'
-    implementation project(':poetry-annotations')
+
+//    implementation project(':poetry-annotations') 正式发布的时候会找不到该依赖库从而报错
+//    implementation 'com.deity.poetry:annotations:1.0.00'
 }
 
 

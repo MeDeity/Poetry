@@ -8,10 +8,13 @@ buildscript {
         maven {
             url uri('repo')// url uri('../repo') 之前写成这样导致找不到本地plugin的问题
         }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.3'
-        classpath 'org.aspectj:aspectjtools:1.8.9'
+//        classpath 'org.aspectj:aspectjtools:1.8.9'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,7 +23,8 @@ buildscript {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17'
         classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.9.17'
-
+//        classpath "gradle.plugin.com.deity.poetry.plugin:poetry-plugin:1.0.0"
+        classpath 'com.deity.poetry.plugin:poetry-plugin:1.0.01'
     }
 }
 

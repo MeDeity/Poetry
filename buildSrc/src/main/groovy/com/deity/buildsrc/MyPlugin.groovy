@@ -29,10 +29,9 @@ public class MyPlugin implements Plugin<Project> {
         }
 
         project.dependencies {
-            // TODO this should come transitively
-            implementation 'org.aspectj:aspectjrt:1.8.6'
-//            implementation project(':poetry-annotations')
-//            implementation project(':poetry-runtime')
+            debugImplementation 'org.aspectj:aspectjrt:1.8.6'
+            implementation 'com.deity.poetry:annotations:1.0.00'
+            debugImplementation 'com.deity.poetry:runtime:1.0.01'
         }
 
         variants.all { variant ->
