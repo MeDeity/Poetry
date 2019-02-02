@@ -23,8 +23,8 @@ buildscript {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17'
         classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.9.17'
-//        classpath "gradle.plugin.com.deity.poetry.plugin:poetry-plugin:1.0.0"
-        classpath 'com.deity.poetry.plugin:poetry-plugin:1.0.01'
+        classpath "gradle.plugin.com.deity.poetry.plugin:poetry-plugin:1.0.01"
+//        classpath 'com.deity.poetry.plugin:poetry-plugin:1.0.01'
     }
 }
 

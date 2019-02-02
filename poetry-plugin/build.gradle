@@ -6,30 +6,30 @@ apply plugin: "java-gradle-plugin"
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:2.2.0'
+    implementation 'com.android.tools.build:gradle:3.1.2'
     implementation 'org.aspectj:aspectjtools:1.8.9'
     implementation 'org.aspectj:aspectjrt:1.8.9'
 }
 
 group='com.deity.poetry.plugin'
-version='1.0.01'
+version='1.0.02'
 
 // Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
-//gradlePlugin {
-//    plugins {
-//        poetryPlugin {
-//            id = 'com.deity.poetry'
-//            implementationClass = 'com.deity.poetry.plugin.PoetryPlugin'
-//        }
-//    }
-//}
+gradlePlugin {
+    plugins {
+        poetryPlugin {
+            id = 'com.deity.poetry'
+            implementationClass = 'com.deity.poetry.plugin.PoetryPlugin'
+        }
+    }
+}
 
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: uri('../repo')) //仓库的路径，此处是项目根目录下的 repo 的文件夹
         pom.groupId = 'com.deity.poetry.plugin'  //groupId ，自行定义，一般是包名
         pom.artifactId = 'poetry-plugin' //artifactId ，自行定义
-        pom.version = '1.0.01' //version 版本号
+        pom.version = '1.0.02' //version 版本号
     }
 }
 
