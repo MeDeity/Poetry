@@ -12,8 +12,11 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.8.9'
 }
 
-group='com.deity.poetry.plugin'
-version='1.0.05'
+targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+group='com.deity.poetry'
+version='1.0.12'
 
 // Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
 gradlePlugin {
@@ -25,12 +28,13 @@ gradlePlugin {
     }
 }
 
+//发布到本地仓库
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: uri('../repo')) //仓库的路径，此处是项目根目录下的 repo 的文件夹
-        pom.groupId = 'com.deity.poetry.plugin'  //groupId ，自行定义，一般是包名
-        pom.artifactId = 'poetry-plugin' //artifactId ，自行定义
-        pom.version = '1.0.05' //version 版本号
+        pom.groupId = 'com.deity.poetry'  //groupId ，自行定义，一般是包名
+        pom.artifactId = 'poetry' //artifactId ，自行定义
+        pom.version = '1.0.12' //version 版本号
     }
 }
 
@@ -74,5 +78,24 @@ pluginBundle {
             id = 'com.deity.poetry'
             displayName = 'aop log for android'
         }
+    }
+
+    // Optional overrides for Maven coordinates.(不再使用gradle.plugin前缀)
+    // If you have an existing plugin deployed to Bintray and would like to keep
+    // your existing group ID and artifact ID for continuity, you can specify
+    // them here.
+    //
+    // As publishing to a custom group requires manual approval by the Gradle
+    // team for security reasons, we recommend not overriding the group ID unless
+    // you have an existing group ID that you wish to keep. If not overridden,
+    // plugins will be published automatically without a manual approval process.
+    //
+    // You can also override the version of the deployed artifact here, though it
+    // defaults to the project version, which would normally be sufficient.
+
+    mavenCoordinates {
+        groupId = "com.deity.poetry"
+        artifactId = "poetry"
+        version = "1.0.12"
     }
 }
