@@ -20,6 +20,8 @@ buildscript {
     }
     dependencies {
         ...
+        //TODO how did i cancel this import? Unable to load class 'org.aspectj.bridge.MessageHandler'.
+        classpath 'org.aspectj:aspectjtools:1.8.9'
         classpath "com.deity.poetry:poetry:1.0.09"
     }
 }
@@ -37,7 +39,7 @@ public String getName(String first, String last) {
 ```
 
 ```
-V/Example: ⇢ getName(first="Jake", last="Wharton")
+    V/Example: ⇢ getName(first="Jake", last="Wharton")
 V/Example: ⇠ getName [16ms] = "Jake Wharton"
 ```
 毕竟复刻,使用方式跟Hugo是一致的.弄这个项目主要是学习Gradle插件的开发.
