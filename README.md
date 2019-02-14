@@ -22,7 +22,7 @@ buildscript {
         ...
         //TODO how did i cancel this import? Unable to load class 'org.aspectj.bridge.MessageHandler'.
         classpath 'org.aspectj:aspectjtools:1.8.9'
-        classpath "com.deity.poetry:poetry:1.0.09"
+        classpath "com.deity.poetry:poetry:1.0.12"
     }
 }
 ````
